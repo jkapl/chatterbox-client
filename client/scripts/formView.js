@@ -4,6 +4,7 @@ var FormView = {
 
   initialize: function() {
     FormView.$form.on('submit', FormView.handleSubmit);
+
   },
 
   handleSubmit: function(event) {
@@ -11,12 +12,13 @@ var FormView = {
     event.preventDefault();
 
     var text = $('input#message').val();
+    var roomname = RoomsView.$select.val()
     console.log(text);
 
     var message = {
       username: App.username,
       text: text,
-      roomname: 'lobby'
+      roomname: roomname
     };
     Parse.create(message, MessagesView.render);
     

@@ -25,7 +25,11 @@ var App = {
       var messages = data;
       _.extend(Messages, messages);
       MessagesView.render();
-      RoomsView.renderRoom();
+      $('.username').on('click', function () {
+        
+        Friends.toggleStatus($(this).text());
+      })
+      RoomsView.render();
       callback();
     });
   },
