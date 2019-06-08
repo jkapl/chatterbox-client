@@ -11,11 +11,8 @@ var MessagesView = {
     //MessagesView.renderMessage(/*100 messages*/);
     // debugger;
     Messages.results.forEach(function(message) {
-      console.log(message);
       if (!_.isUndefined(message.username)) {
-        console.log(message)
         var messageToAppend = MessagesView.renderMessage(message);
-        console.log(messageToAppend);
         MessagesView.$chats.append(messageToAppend);
       }
     });

@@ -11,10 +11,10 @@ var App = {
     RoomsView.initialize();
     MessagesView.initialize();
 
+
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-    console.log('1')
     
     
   },
@@ -25,6 +25,7 @@ var App = {
       var messages = data;
       _.extend(Messages, messages);
       MessagesView.render();
+      RoomsView.renderRoom();
       callback();
     });
   },
